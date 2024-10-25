@@ -1,0 +1,45 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage 24442422 Assignment 1
+
+
+Ackerman:
+- Within this file, we initialise various parameters including platform type, initial position and velocity.
+- The reachGoal function attempts to steer the platform towards the goal by calling a steering computation function.
+- If successful, it initiates further actions through zoomZooms.
+- setGoal updates the goal position and sends it to the platform.
+- checkOriginToDestination computes distance and estimated time to reach the goal. 
+- distanceToGoal and timeToGoal functions calculate the remaining distance and time respectively.
+- zoomZooms continuously adjusts throttle, brake, and steering until the goal is reached within a tolerance.
+
+\image html Ackerman.PNG "AudiReachGoals Test"
+
+
+SkidSteer:
+- The locationSet function calculates distance and angle to the goal, adjusting steering and movement accordingly.
+- reachGoal continuously adjusts movement to reach the goal.
+- setGoal updates the goal position.
+- Other functions provide information about distance, time, and odometry. 
+- Running the file will call all the functions, and guide the skidsteer to a goal, and then back to its original position, another goal.
+
+\image html husky.PNG "HuskyReachGoals Test"
+
+Mission:
+- The setGoal method sets two goals for the mission.
+- The runMission method iterates through the controllers vector, setting each controllers goal and reaching it twice
+- getPlatformAssociation associates platform numbers with goals, assuming a single platform scenario.
+- Expectation upon running would be the controllers reaching the specified goals.
+
+\image html mission.PNG "Mission Test"
+
+
+@n By Nicholas Camilo
+@n nicholas.camilo@student.uts.edu.au
+
+*/
