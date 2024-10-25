@@ -1,0 +1,10 @@
+Progrmming for mechatronics systems:
+The subject presents the theoretical foundations of object-oriented programming and design using C++ and provides
+students with skills in the design and implementation of a code base for mechatronics systems of moderate complexity.
+This subject familiarises students with approaches to design and implement code that is modular, re-usable, reliable
+and maintainable.
+Working on an individual project that requires the design and implementation of part of a mechatronic system allows
+students to apply their knowledge to a real-life problem.
+Topics include: objects, classes, abstraction, inheritance, polymorphism, run-time instantiation, threading, thread
+communication, event handling, use of generic features of C++ such as the STL and utilising APIs, middleware,
+documentation and testing.
