@@ -1,0 +1,106 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage Assignment 2
+
+Ackerman:
+
+What does the code do?
+- Constructor and Destructor: Initializes the Ackerman platform with default values and starts a thread for its operation. The destructor stops the thread when the object is destroyed.
+- run Method: Marks the platform as running and notifies any waiting threads.
+- status Method: Retrieves the current status of the platform.
+- setGoals Method: Sets goals for the platform to reach. It iterates over each goal, sends it to the platform, and checks if the steering computation is successful.
+- checkOriginToDestination Method: Checks the origin to destination for the platform.
+- getPlatformType Method: Retrieves the type of platform.
+- distanceToGoal and timeToGoal Methods: Compute the distance and time to reach the goal, respectively.
+- getOdometry and getObstacles Methods: Retrieve odometry and obstacles information, respectively. (The latter is not fully implemented.)
+- audiZooms Method: The main loop for the platform's operation. It continuously reads data from sensors, computes steering and throttle commands, and sends them to the platform until goals are reached.
+
+How should it be run?
+To run the code you would need to follow these steps.
+1. Include Necessary Files: Make sure all files are included (in this case they have)
+2. Instantiate an Ackerman Object: Create an instance of the Ackerman class (in this case its already done)
+3. Set Goals: Use the setGoals method to assign the goals for the Ackerman platform
+4. Build: Build the code so it is compiled properly
+5. Run the platform: Run it against the Unit Test
+6. Terminate Program: Ensure that the program is terminated gracefully. The destructor of the Ackerman object will handle cleanup tasks such as stopping threads.
+
+
+\image html AT2_ackerman.PNG "testAudiReachGoals"
+
+
+
+
+
+
+
+Quadcopter:
+
+In summary it includes methods for setting goals, running the platform, checking the origin to destination, computing distance and time to goal, and performing takeoff. The main operation of the quadcopter involves continuously moving towards specified goals until all goals are reached.
+
+The instructions to run the code are as follows:
+1. Include Necessary Files: Make sure all files are included (in this case they have)
+2. Instantiate an Quadcopter Object: Create an instance of the Quadcopter class (in this case its already done)
+3. Set Goals: Use the setGoals method to assign the goals for the Quadcopter platform
+4. Build: Build the code so it is compiled properly
+5. Run the platform: Run it against the Unit Test
+6. Terminate Program: Ensure that the program is terminated gracefully. The destructor of the Quadcopter object will handle cleanup tasks such as stopping threads.
+
+
+\image html AT2_quadcopter.PNG "testQuadcopterReachGoals"
+
+
+
+
+
+
+
+Mission:
+
+This code defines a Mission class that coordinates the execution of a mission involving multiple controllers, such as quadcopters and Ackerman platforms. Here's a breakdown of its functionality:
+
+1. Constructor and Destructor
+- The constructor initializes the Mission object with a vector of ControllerInterface pointers and sets some member variables to default values.
+- The destructor is empty as there is no resource cleanup needed.
+
+
+2. Mission Control Functions
+- setGoals: Sets the mission goals for the specified platform according to the selected objective (basic or advanced).
+- run: Executes the mission by calling the run method of each controller.
+- status: Retrieves the status of each platform and returns it as a vector.
+- setMissionObjective: Sets the mission objective (basic or advanced).
+- getDistanceTravelled: Retrieves the distance travelled by each platform during the mission.
+- getTimeMoving: Retrieves the time each platform has been moving during the mission.
+- getPlatformGoalAssociation: Retrieves the association between each platform and its current goal index.
+
+
+3. Utility Functions
+- calculateMissionPercentage: Calculates the percentage completion of the mission based on the distance travelled by the platforms.
+- calculateTotalDistance: Calculates the total distance to be covered in the mission.
+
+
+5. Summary 
+
+Upon instantiation, the class initializes controllers and mission parameters. It facilitates goal setting, allowing for both basic and advanced modes where goals are either directly assigned or optimized using a Traveling Salesman Problem (TSP) solver. The mission's progress is tracked through functions that calculate completion percentage, distance travelled, and time spent moving. The class also manages platform status and associations between platforms and their goals. Overall, this system coordinates platform actions, optimizes goal sequences, and provides metrics to monitor mission progress in autonomous operations.
+
+
+To run this code
+
+When running, it is best to open a new simulator, build it, and then run it for testMissionReachGoals. And for every attempt after, if successful, run it without resetting. 
+
+- Instantiate a Mission object with a vector containing pointers to the desired controllers.
+- Call setGoals to set the goals for each platform.
+- Execute the mission by calling the run method.
+- Retrieve mission statistics and status using the provided methods like status, getDistanceTravelled, getTimeMoving, etc.
+
+\image html AT2_mission.PNG "testMissionReachGoals"
+
+@n By Nicholas Camilo
+@n nicholas.camilo@student.uts.edu.au
+
+*/
